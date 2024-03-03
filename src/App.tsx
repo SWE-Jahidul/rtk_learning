@@ -1,50 +1,24 @@
-import { useState } from "react";
-import PostCard from "./components/PostCard";
-import { useGetPostsQuery, useNewPostMutation } from "./redux/api";
+import Post from "./components/Post";
+import { useGetPostQuery } from "./features/api/apiSlice";
 
 export default function App() {
-  const { isLoading, data } = useGetPostsQuery("");
+  const { data: posts, isLoading, isError } = useGetPostQuery();
+  console.log(posts);
+  let content = null;
 
-const [newPost] = useNewPostMutation();
-
-
-  const [ title, setTitle ] = useState<string>("");
-  const [body, setBody ] = useState<string>("");
-
-  const submitHandler = (e: FormEvent<HTMLFormElement>): void =>{
-    e.preventDefault();
-    const post: Post = {
-      title, 
-      body,
-      id: Math.random() *100
-    }
-    newPost(post)
+  if (isLoading) {
+    content = "loading....";
   }
-  return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
 
-        <input
-          type="text"
-          placeholder="Body"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        />
+  if (!isLoading && isError) {
+    content = "Error..";
+  }
+  if (!isLoading && !isError && posts?.length === 0) {
+    content = "No Data Found";
+  }
 
-        <button> add </button>
-      </form>
-
-      {isLoading ? (
-        <div> loading....</div>
-      ) : (
-        data?.map((i) => <PostCard key={i.id} post={i} />)
-      )}
-    </div>
-  );
+  if (!isLoading && !isError && posts?.length > 0) {
+    content = posts.map((post:any) => <Post key={post.id} post={post} />);
+  }
+  return content;
 }
