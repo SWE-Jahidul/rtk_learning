@@ -1,19 +1,49 @@
 {
-    "posts":[
-        {
-            "title":"Post1",
-            "body":"Some random postrs",
-            "id":1
-        },
-        {
-            "title":"Post2",
-            "body":"Some random postrs",
-            "id":2
-        },
-        {
-            "title":"Post3",
-            "body":"Some random postrs",
-            "id":3
-        }
-    ]
+  "posts": [
+    {
+      "title": "Post1",
+      "body": "Some random postrs",
+      "id": "1"
+    },
+    {
+      "id": 82.73303488355354,
+      "title": "post2 ",
+      "body": "bnkjvdbhfjdsvjd"
+    },
+    {
+      "id": 33.81655642573449,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 67.84895728171279,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 18.488060831553653,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 33.89431313319577,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 31.33742499820469,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 76.1169901406983,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    },
+    {
+      "id": 38.57617495242023,
+      "title": "post3 ",
+      "body": "dsfgrdhgrt"
+    }
+  ]
 }
